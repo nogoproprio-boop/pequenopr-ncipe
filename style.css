@@ -1,3 +1,7 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
@@ -10,306 +14,98 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#08172f;
-    color:white;
+    background:linear-gradient(180deg,#0d1b3d,#162d63,#08152f);
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* Fundo estrelado */
+/* ==========================
+   ESTRELAS
+========================== */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
     background-image:
-    radial-gradient(white 1px,transparent 1px),
-    radial-gradient(#ffe082 1px,transparent 1px);
-
-    background-size:80px 80px,140px 140px;
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#ffd54f 1px,transparent 1px);
+    background-size:80px 80px,160px 160px;
     opacity:.35;
-    animation:estrelas 45s linear infinite;
+    animation:estrelas 60s linear infinite;
     z-index:-2;
 }
 
 @keyframes estrelas{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(200px);
-    }
-
+    from{transform:translateY(0);}
+    to{transform:translateY(180px);}
 }
 
-/* Hero */
+/* ==========================
+   HERO
+========================== */
 
 .hero{
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
-    padding:40px;
-
+    padding:40px 20px;
 }
 
 .hero-content{
-
-    max-width:700px;
-
+    max-width:760px;
 }
 
 .foto{
-
     width:220px;
-
     height:220px;
-
     object-fit:cover;
-
     border-radius:50%;
-
     border:6px solid #FFD54F;
-
-    box-shadow:0 0 35px rgba(255,213,79,.6);
-
+    box-shadow:0 0 25px rgba(255,213,79,.7);
     margin-bottom:25px;
+    animation:foto 3s infinite;
+}
+
+@keyframes foto{
+
+    50%{
+
+        transform:scale(1.04);
+
+        box-shadow:
+        0 0 45px rgba(255,213,79,1);
+
+    }
 
 }
 
 h1{
 
-    font-family:"Cinzel",serif;
-
-    font-size:58px;
+    font-family:'Cinzel',serif;
 
     color:#FFD54F;
+
+    font-size:60px;
+
+    margin-bottom:10px;
 
 }
 
 h2{
 
-    margin-top:10px;
+    font-size:34px;
 
     margin-bottom:20px;
 
-    font-size:34px;
-
 }
 
-.hero p{
-
-    font-size:20px;
-
-    line-height:1.7;
-
-    margin-bottom:40px;
-
-}
-
-/* Botão */
-
-.botao{
-
-    text-decoration:none;
-
-    color:#08172f;
-
-    background:#FFD54F;
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-.botao:hover{
-
-    transform:scale(1.05);
-
-    box-shadow:0 0 20px #FFD54F;
-
-}
-
-/* Seções */
-
-section{
-
-    padding:90px 25px;
-
-    text-align:center;
-
-}
-
-.texto{
-
-    max-width:700px;
-
-    margin:auto;
-
-    line-height:1.8;
-
-    font-size:18px;
-
-}
-
-/* Cards */
-
-.informacoes{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
-}
-
-.card{
-
-    background:rgba(255,255,255,.06);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:20px;
-
-    padding:30px;
-
-    width:280px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    transition:.3s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.card h3{
-
-    color:#FFD54F;
-
-    margin-bottom:15px;
-
-}
-
-.card a{
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    color:#FFD54F;
-
-    text-decoration:none;
-
-}
-
-/* Presentes */
-
-.presentes{
-
-    background:#0d2147;
-
-}
-
-.presente{
-
-    margin:35px auto;
-
-    max-width:500px;
-
-    padding:25px;
-
-    background:rgba(255,255,255,.05);
-
-    border-radius:20px;
-
-}
-
-.obs{
-
-    margin-top:35px;
-
-    opacity:.85;
-
-}
-
-/* Formulário */
-
-.confirmacao form{
-
-    max-width:500px;
-
-    margin:40px auto;
-
-}
-
-input{
-
-    width:100%;
-
-    padding:16px;
-
-    margin-bottom:18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-size:17px;
-
-}
-
-button{
-
-    width:100%;
-
-    padding:18px;
-
-    background:#FFD54F;
-
-    color:#08172f;
-
-    border:none;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    font-size:18px;
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    transform:scale(1.03);
-
-}
-
-/* Botão da música */
+.hero
+/* ==========================
+   BOTÃO DA MÚSICA
+========================== */
 
 #musicButton{
 
@@ -319,23 +115,25 @@ button:hover{
 
     right:20px;
 
-    width:55px;
+    width:58px;
 
-    height:55px;
+    height:58px;
+
+    border:none;
 
     border-radius:50%;
 
     background:#FFD54F;
 
-    color:#08172f;
-
-    border:none;
+    color:#08152f;
 
     font-size:24px;
 
     cursor:pointer;
 
-    box-shadow:0 0 20px rgba(255,213,79,.6);
+    box-shadow:0 0 18px rgba(255,213,79,.7);
+
+    transition:.3s;
 
     z-index:9999;
 
@@ -343,45 +141,152 @@ button:hover{
 
 #musicButton:hover{
 
-    transform:scale(1.1);
+    transform:scale(1.08);
 
 }
 
-/* Contagem */
+/* ==========================
+   CONTADOR
+========================== */
 
 #contador{
 
-    margin-top:25px;
-
-    color:#FFD54F;
+    margin-top:30px;
 
     font-size:22px;
 
+    color:#FFD54F;
+
     font-weight:bold;
 
-}
-
-/* Rodapé */
-
-footer{
-
-    padding:35px;
-
-    text-align:center;
-
-    background:#061225;
-
-    opacity:.9;
+    text-shadow:0 0 10px rgba(255,213,79,.6);
 
 }
 
-/* Celular */
+/* ==========================
+   ANIMAÇÃO DAS SEÇÕES
+========================== */
+
+section{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:.8s;
+
+}
+
+/* ==========================
+   ESTRELAS CADENTES
+========================== */
+
+.estrela-cadente{
+
+    position:fixed;
+
+    width:3px;
+
+    height:80px;
+
+    background:linear-gradient(transparent,#fff);
+
+    transform:rotate(35deg);
+
+    opacity:.8;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+input:focus{
+
+    outline:none;
+
+    box-shadow:0 0 18px rgba(255,213,79,.7);
+
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+
+button:hover,
+.botao:hover{
+
+    box-shadow:0 0 25px rgba(255,213,79,.8);
+
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:white;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08152f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#FFD54F;
+
+    border-radius:20px;
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
 
 @media(max-width:768px){
 
+.hero{
+
+padding:30px 20px;
+
+}
+
+.foto{
+
+width:180px;
+
+height:180px;
+
+}
+
 h1{
 
-font-size:42px;
+font-size:44px;
 
 }
 
@@ -397,17 +302,95 @@ font-size:18px;
 
 }
 
-.foto{
+.informacoes{
 
-width:180px;
-
-height:180px;
+grid-template-columns:1fr;
 
 }
 
 .card{
 
-width:100%;
+padding:25px;
+
+}
+
+.presente{
+
+padding:24px;
+
+}
+
+#musicButton{
+
+width:50px;
+
+height:50px;
+
+font-size:20px;
+
+top:15px;
+
+right:15px;
+
+}
+
+button{
+
+font-size:17px;
+
+}
+
+}
+
+/* ==========================
+   ANIMAÇÕES EXTRAS
+========================== */
+
+.foto:hover{
+
+    transform:scale(1.05);
+
+}
+
+.card:hover{
+
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+
+}
+
+.presente:hover{
+
+    box-shadow:0 0 20px rgba(255,213,79,.25);
+
+}
+
+footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.hero-content{
+
+    animation:fadeHero 1.2s ease;
+
+}
+
+@keyframes fadeHero{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
 
 }
 
